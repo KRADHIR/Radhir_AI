@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ghibli Art Photo Converter</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghibli Art Converter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container" id="container">
-    <header>
-      <h1>Ghibli Art Photo Converter</h1>
-      <p>Upload your photo and turn it into a Studio Ghibli masterpiece!</p>
-    </header>
-    <main>
-      <div class="upload-area" id="upload-area">
-        <input type="file" id="file-input" accept="image/*" />
-        <p>Drag and drop your image here or click to upload.</p>
-      </div>
-      <div class="preview-container">
-        <section class="preview" id="original-preview">
-          <h2>Original Image</h2>
-          <img id="original-image" src="" alt="Original Image" />
+    <div class="container">
+        <header>
+            <h1>Ghibli Art Converter</h1>
+            <p>Upload your photo and turn it into a Studio Ghibli masterpiece!</p>
+        </header>
+
+        <section class="upload-section">
+            <label for="imageUpload" class="upload-label">Drag & Drop or Click to Upload</label>
+            <input type="file" id="imageUpload" accept="image/*">
+            <div id="loading" class="hidden">Processing image...</div>
         </section>
-        <section class="preview" id="ghibli-preview">
-          <h2>Ghibli-fied Image</h2>
-          <img id="ghibli-image" src="" alt="Ghibli Art Image" />
+
+        <section class="preview-section">
+            <div class="image-wrapper">
+                <img id="originalImage" alt="Original Preview">
+                <img id="convertedImage" alt="Ghibli Style Preview">
+            </div>
+            <div class="controls">
+                <label for="styleStrength">Ghibli Style Strength:</label>
+                <input type="range" id="styleStrength" min="0" max="100" value="50">
+
+                <button id="convertBtn">Convert Image</button>
+                <button id="downloadBtn">Download</button>
+            </div>
         </section>
-      </div>
-      <div class="controls">
-        <label for="style-strength">Ghibli Style Strength:</label>
-        <input type="range" id="style-strength" min="0" max="100" value="50" />
-        <button id="convert-button" disabled>Convert</button>
-        <button id="download-button" disabled>Download</button>
-      </div>
-    </main>
-    <footer>
-      <p>Channel your inner Miyazaki—drag, drop, and dreamify!</p>
-    </footer>
-    <div id="loading-overlay" aria-hidden="true">
-      <div class="spinner" role="status" aria-label="Loading"></div>
+
+        <footer>
+            <p>Made with love and Ghibli magic — Created by Radhir_AI</p>
+        </footer>
     </div>
-    <!-- Floating soot sprites -->
-    <div class="soot-sprite" style="top: 40px; left: 15px; animation-delay: 0s;"></div>
-    <div class="soot-sprite" style="top: 160px; left: 80px; animation-delay: 2.5s;"></div>
-    <div class="soot-sprite" style="top: 200px; right: 60px; animation-delay: 1.3s;"></div>
-    <div class="soot-sprite" style="top: 90px; right: 20px; animation-delay: 4s;"></div>
-  </div>
-  <script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
